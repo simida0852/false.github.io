@@ -83,9 +83,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="macbook日常使用相关"><a href="#macbook日常使用相关" class="headerlink" title="macbook日常使用相关"></a>macbook日常使用相关</h2><h3 id="1-安装-‘brew’"><a href="#1-安装-‘brew’" class="headerlink" title="1.安装 ‘brew’"></a>1.安装 ‘brew’</h3><p><a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">参考网站</a><br>打开终端 (command + space, 搜索 ‘terminal’)<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+        <h2 id="macbook日常使用相关"><a href="#macbook日常使用相关" class="headerlink" title="macbook日常使用相关"></a>macbook日常使用相关</h2><h3 id="1-安装-‘brew’"><a href="#1-安装-‘brew’" class="headerlink" title="1.安装 ‘brew’"></a>1.安装 ‘brew’</h3><p><a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">参考网站</a><br>打开终端 (command + space, 搜索 ‘terminal’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-mac个性终端-iterm2"><a href="#2-mac个性终端-iterm2" class="headerlink" title="2. mac个性终端 iterm2"></a>2. mac个性终端 iterm2</h3><p><a href="https://www.iterm2.com/" target="_blank" rel="noopener">参考网站</a><br>直接下载安装就好</p>
-<h3 id="3-给终端加个主题"><a href="#3-给终端加个主题" class="headerlink" title="3. 给终端加个主题"></a>3. 给终端加个主题</h3><p><a href="http://ohmyz.sh/" target="_blank" rel="noopener">参考网站</a><br>打开终端<br><code>sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code><br>安装完之后,在系统根目录会多一个’.zshrc’配置文件.如果觉得默认的主题不好看,可以换你喜欢的.<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="noopener">主题预览</a><br>选择主题后,把主题名字复制,修改’.zshrc’中的 <code>ZSH_THEME=&quot;robbyrussell&quot;</code>即可.</p>
+<h3 id="3-给终端加个主题"><a href="#3-给终端加个主题" class="headerlink" title="3. 给终端加个主题"></a>3. 给终端加个主题</h3><p><a href="http://ohmyz.sh/" target="_blank" rel="noopener">参考网站</a><br>在终端中输入一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</span><br></pre></td></tr></table></figure></p>
+<p>安装完之后,在系统根目录会多一个’.zshrc’配置文件.如果觉得默认的主题不好看,可以换你喜欢的.<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="noopener">主题预览</a><br>选择主题后,把主题名字复制,修改’.zshrc’中的 <code>ZSH_THEME=&quot;robbyrussell&quot;</code>即可.</p>
 <h3 id="4-使用指令打开指定的程序"><a href="#4-使用指令打开指定的程序" class="headerlink" title="4. 使用指令打开指定的程序"></a>4. 使用指令打开指定的程序</h3><p>例如,我喜欢使用<code>code .</code>来用vscode来打开项目文件.<br>首先,找到vscode的执行程序.我的是在’/Applications/code.app/Contents/Resources/app/bin/code’.<br>编辑系统根目录的’.zshrc’,在最后一行的地方,添加<code>alias code=&#39;/Applications/code.app/Contents/Resources/app/bin/code&#39;</code><br>保存,重新打开终端即可使用指令打开vscode了</p>
 <h3 id="5-删除文件夹-非空"><a href="#5-删除文件夹-非空" class="headerlink" title="5. 删除文件夹(非空)"></a>5. 删除文件夹(非空)</h3><p>之前试过<code>rmdir</code>命令,但是无法删除非空的文件夹,<br>后来查了一下,使用<code>rm -rf 文件夹</code>,就可以了.</p>
 <h3 id="6-窗口分布插件"><a href="#6-窗口分布插件" class="headerlink" title="6. 窗口分布插件"></a>6. 窗口分布插件</h3><p>设置每个程序窗口的大小(按照宫格尺寸).<br>不知道怎么描述,反正看<a href="http://mizage.com/divvy/" target="_blank" rel="noopener">官方文档</a>就OK了.</p>
@@ -95,11 +96,13 @@
 <li>在终端中执行<code>mount</code>,打印已挂载的设备,找到U盘路径. 我目前的路径是’/dev/disk2s1’</li>
 <li>卸载U盘: <code>sudo umount /dev/disk2s1</code>.</li>
 <li>创建一个目录作为U盘的挂载点,用于打开U盘: <code>mkdir ntfs-disk</code></li>
-<li>重新挂载: <code>sudo mount -t ntfs -o rw,nobrowse /dev/disk2s1 /Users/username/ntfs-disk</code><br>其中<code>-t</code>为’type’,<code>ntfs</code>是格式;<code>-o</code>为’options’,<code>rw</code>表示可读可写;<code>nobrowse</code>表示不需要预览;最后两项是’U盘路径’和’挂载的文件路径’.<br><code>/Users/username/ntfs-disk</code>这个路径时当前系统用户下的文件,需要知道完整的路径,通过<code>pwd</code>获取.<h2 id="指令集-持续更新"><a href="#指令集-持续更新" class="headerlink" title="指令集(持续更新)"></a>指令集(持续更新)</h2></li>
-<li>查看当前目录完整路径 : pwd</li>
-<li>复制文件(文件夹) : cp -r ./a/ ./b<h2 id="让终端命令走代理"><a href="#让终端命令走代理" class="headerlink" title="让终端命令走代理"></a>让终端命令走代理</h2><code>export ALL_PROXY=socks5://127.0.0.1:1080</code></li>
+<li>重新挂载: <code>sudo mount -t ntfs -o rw,nobrowse /dev/disk2s1 /Users/username/ntfs-disk</code><br>其中<code>-t</code>为’type’,<code>ntfs</code>是格式;<code>-o</code>为’options’,<code>rw</code>表示可读可写;<code>nobrowse</code>表示不需要预览;最后两项是’U盘路径’和’挂载的文件路径’.<br><code>/Users/username/ntfs-disk</code>这个路径时当前系统用户下的文件,需要知道完整的路径,通过<code>pwd</code>获取.</li>
 </ol>
-
+<h3 id="指令集-持续更新"><a href="#指令集-持续更新" class="headerlink" title="指令集(持续更新)"></a>指令集(持续更新)</h3><ol>
+<li>查看当前目录完整路径 : pwd</li>
+<li>复制文件(文件夹) : cp -r ./a/ ./b</li>
+</ol>
+<h3 id="让终端命令走代理"><a href="#让终端命令走代理" class="headerlink" title="让终端命令走代理"></a>让终端命令走代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export ALL_PROXY=socks5://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
       
     </div>
 
